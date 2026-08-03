@@ -10,3 +10,5 @@ release notes.
   a shared security baseline.
 - Adopted a web-first interface workflow with an explicit native integration
   and verification gate.
+- Required repeatable, equivalent-condition evidence before publishing privacy
+  or performance comparisons.
