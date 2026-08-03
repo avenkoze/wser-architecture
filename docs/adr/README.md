@@ -11,5 +11,4 @@ engineering model.
 
 ## Index
 
-New records are added to this index when accepted.
-
+- [ADR 0001: Use two mutually exclusive privacy profiles](0001-dual-privacy-profiles.md)
