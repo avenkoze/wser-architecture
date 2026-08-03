@@ -12,3 +12,4 @@ engineering model.
 ## Index
 
 - [ADR 0001: Use two mutually exclusive privacy profiles](0001-dual-privacy-profiles.md)
+- [ADR 0002: Design browser interfaces in a web studio first](0002-web-first-interface-prototyping.md)

@@ -8,3 +8,5 @@ release notes.
 - Established the public Wser architecture journal and publication rules.
 - Accepted Private and Socialise as mutually exclusive protection profiles with
   a shared security baseline.
+- Adopted a web-first interface workflow with an explicit native integration
+  and verification gate.
