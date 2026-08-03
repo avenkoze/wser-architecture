@@ -36,10 +36,26 @@ The minimum comparison protocol is:
   isolation, or extension signing to improve a score.
 - No claim of complete or universal tracking prevention.
 
+## Cover Your Tracks release gate
+
+Private release candidates target the strongest result supported by EFF's
+published Cover Your Tracks methodology:
+
+- the simulated visible advertising tracker is blocked;
+- the simulated invisible tracking beacon is blocked;
+- the domain that follows the Do Not Track policy behaves as the test expects;
+- cookie-only blocking is recorded as partial protection, not a full pass;
+- the fingerprint report is non-unique or reports effective randomization, and
+  its detailed surface results are retained for review;
+- the complete scenario succeeds in three clean-profile runs.
+
+Cover Your Tracks does not define a universal browser league table. “Best” or
+“highest” may be published only after Wser and the named comparison browsers
+are tested under the equivalent conditions defined above.
+
 ## Consequences
 
 - Product UI shows “not measured” until verified results exist.
 - A privacy test is an acceptance input, not the complete privacy model.
 - Site compatibility failures are recorded alongside protection improvements.
 - Claims may be narrower than the product ambition, but remain defensible.
-

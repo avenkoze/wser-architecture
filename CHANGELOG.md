@@ -12,3 +12,5 @@ release notes.
   and verification gate.
 - Required repeatable, equivalent-condition evidence before publishing privacy
   or performance comparisons.
+- Added the strongest Cover Your Tracks result as a Private release gate while
+  keeping comparative ranking claims dependent on equivalent-condition tests.
