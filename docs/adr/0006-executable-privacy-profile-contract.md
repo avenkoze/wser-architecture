@@ -19,10 +19,12 @@ security baseline.
   and observes later changes during the same session.
 - Each applied profile records a versioned state marker so diagnostics and
   release tests can distinguish a selected label from an applied contract.
-- Private enables the stricter anti-tracking, fingerprinting, link-cleaning,
+- Private enables full platform fingerprint resistance, content letterboxing,
+  web-locale standardization, and the stricter anti-tracking, link-cleaning,
   referrer, bounce-tracking, and background-network policy.
 - Socialise may relax normal-window compatibility surfaces and enable the Push
-  transport, but it keeps stronger private-window protections.
+  transport. It keeps full fingerprint resistance in private windows while
+  using the compatibility-oriented fingerprinting profile in normal windows.
 - Total Cookie Protection, Global Privacy Control, core tracker and malicious
   content defenses, HTTPS protection, process isolation, and extension signing
   remain common invariants.
@@ -39,6 +41,8 @@ Release candidates must demonstrate that:
    extension signing remain enabled in both transition snapshots;
 5. comparative privacy claims remain subject to the separate repeatable-
    evidence policy.
+6. external fingerprinting tests record the exposed surfaces and repeat across
+   three clean profiles; one pass/fail label is not sufficient evidence.
 
 ## Consequences
 
@@ -65,3 +69,18 @@ Release candidates must demonstrate that:
   enabled, offline, subscription, retrieval, and unsubscribe paths. The local
   harness still has a post-test application-shutdown timeout to isolate before
   this check can be promoted to a clean release-gate command.
+
+## Version 2 fingerprinting evidence
+
+- The initial compatibility-oriented profile blocked tracking ads and invisible
+  trackers, and randomized canvas and WebGL output. It still exposed the real
+  timezone, screen dimensions, GPU renderer, and hardware thread count.
+- Version 2 standardized those surfaces across three clean Private profiles:
+  UTC, a common letterboxed viewport, a generic WebGL identity, English web
+  locale, and a tiered thread count.
+- All three external tests continued to block tracking ads and invisible
+  trackers. The fingerprint classification improved from unique to
+  nearly-unique, but did not establish anonymity or a comparative ranking.
+- The external result population changes over time. Public claims therefore
+  describe observed surfaces and repeat conditions rather than promising the
+  strongest score.

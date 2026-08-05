@@ -5,6 +5,12 @@ release notes.
 
 ## 2026-08-05
 
+- Upgraded the Private profile contract to full fingerprint resistance,
+  letterboxing, and web-locale standardization while retaining a normal-window
+  compatibility path in Socialise.
+- Added a repeatable external fingerprint report probe and recorded three clean
+  profile runs without turning a volatile population score into a ranking
+  claim.
 - Added a fail-closed, exact-host Private startup egress gate and verified its
   negative path with a synthetic unknown endpoint.
 - Removed a hidden all-URL search-redirect measurement extension from the
