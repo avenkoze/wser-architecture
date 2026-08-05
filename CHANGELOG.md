@@ -5,6 +5,11 @@ release notes.
 
 ## 2026-08-05
 
+- Removed the optional ONNX Runtime from Wser builds while local machine-
+  learning features remain disabled.
+- Separated Remote Settings Push Broadcast from signed periodic polling.
+- Defined Private as starting with the Push transport disconnected while
+  retaining the web Push API for an explicit Socialise opt-in.
 - Established an explicit engine boundary for data egress, remote
   configuration, and privileged component delivery.
 - Required clean-profile runtime, release-build, and deny-proxy endpoint checks
