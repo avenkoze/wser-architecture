@@ -50,3 +50,18 @@ Release candidates must demonstrate that:
   mode.
 - Adding or weakening a managed preference requires updating the engine test,
   runtime transition probe, documentation, and architecture review together.
+
+## Initial evidence
+
+- The engine test completed all Private, Socialise, and invalid-value fallback
+  assertions without mismatches.
+- A fresh browser profile reported the versioned Private state and no hardening
+  or Strict-category mismatches.
+- A live Socialise-to-Private transition preserved the shared security
+  invariants with zero preference mismatches.
+- Equivalent 20-second deny-proxy runs observed the Push service only in
+  Socialise: two connection attempts in Socialise and none in Private.
+- The targeted browser Push assertions completed successfully for disabled,
+  enabled, offline, subscription, retrieval, and unsubscribe paths. The local
+  harness still has a post-test application-shutdown timeout to isolate before
+  this check can be promoted to a clean release-gate command.
