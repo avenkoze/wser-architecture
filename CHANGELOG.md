@@ -3,6 +3,18 @@
 This changelog records public architecture milestones rather than application
 release notes.
 
+## 2026-08-05
+
+- Established an explicit engine boundary for data egress, remote
+  configuration, and privileged component delivery.
+- Required clean-profile runtime, release-build, and deny-proxy endpoint checks
+  before a release candidate can claim the hardened configuration.
+- Preserved signed security data, sandboxing, process isolation, safe browsing,
+  certificate protections, and extension signing while removing optional
+  reporting and experiment components.
+- Kept automatic application updates out of the temporary release
+  configuration until Wser owns a signed update and rollback chain.
+
 ## 2026-08-03
 
 - Established the public Wser architecture journal and publication rules.
