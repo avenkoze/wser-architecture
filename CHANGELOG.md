@@ -5,6 +5,10 @@ release notes.
 
 ## 2026-08-05
 
+- Made Private and Socialise an executable, versioned engine contract with a
+  safe Private fallback and live atomic transitions.
+- Required both profiles to preserve the shared safe browsing, HTTPS, cookie
+  isolation, process isolation, and extension-signing baseline.
 - Removed the optional ONNX Runtime from Wser builds while local machine-
   learning features remain disabled.
 - Separated Remote Settings Push Broadcast from signed periodic polling.
