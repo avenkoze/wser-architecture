@@ -84,3 +84,18 @@ Release candidates must demonstrate that:
 - The external result population changes over time. Public claims therefore
   describe observed surfaces and repeat conditions rather than promising the
   strongest score.
+
+## Compatibility smoke evidence
+
+- Both Private and Socialise loaded eight read-only smoke targets covering
+  major identity pages, a document application, media, WebRTC, a payment
+  development page, and a challenge demo.
+- Core WebCrypto, storage, worker, WebAssembly, WebGL, media-device, peer-
+  connection, H.264, and VP9 capability surfaces remained available.
+- Private exposed the standardized timezone, viewport, WebGL identity, and
+  tiered hardware count. Socialise returned to the system-specific values in
+  the same running browser, confirming that the compatibility switch affects
+  observable web behavior.
+- No credentials, payment, challenge response, camera access, or media playback
+  was submitted. These results are loading and API smoke evidence, not completed
+  transaction evidence.

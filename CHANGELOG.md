@@ -5,6 +5,9 @@ release notes.
 
 ## 2026-08-05
 
+- Added a two-profile compatibility smoke matrix covering identity, document,
+  media, WebRTC, payment-development, and challenge-demo surfaces, with clear
+  limits on what constitutes a completed workflow.
 - Upgraded the Private profile contract to full fingerprint resistance,
   letterboxing, and web-locale standardization while retaining a normal-window
   compatibility path in Socialise.
