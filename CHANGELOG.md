@@ -5,6 +5,12 @@ release notes.
 
 ## 2026-08-05
 
+- Added a fail-closed, exact-host Private startup egress gate and verified its
+  negative path with a synthetic unknown endpoint.
+- Removed a hidden all-URL search-redirect measurement extension from the
+  packaged browser while preserving search behavior and maintained source.
+- Kept optional account Sync separate from account/client association metrics
+  and upstream Monitor, Relay, and VPN calls to action.
 - Made Private and Socialise an executable, versioned engine contract with a
   safe Private fallback and live atomic transitions.
 - Required both profiles to preserve the shared safe browsing, HTTPS, cookie

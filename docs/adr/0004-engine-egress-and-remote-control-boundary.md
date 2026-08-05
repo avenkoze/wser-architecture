@@ -57,6 +57,12 @@ Release candidates must pass three independent checks:
 The endpoint allowlist is reviewed whenever the maintained browser base or a
 bundled extension is updated.
 
+The Private idle-startup gate uses exact reviewed hostnames rather than broad
+domain wildcards. A forbidden endpoint or any hostname outside that list makes
+the gate fail closed. Security and blocking dependencies are identified by
+their function and source manifest, not accepted merely because they belong to
+a familiar provider.
+
 ## Consequences
 
 - The temporary release configuration cannot provide automatic application
@@ -66,5 +72,22 @@ bundled extension is updated.
   mislabeled as telemetry.
 - New remote services require an architecture decision, a named owner, a data
   contract, and regression coverage.
+- Hidden instrumentation that observes browsing only to populate upstream
+  product metrics is excluded from the package when it provides no security or
+  user-facing function. User-requested Sync remains separable from account-
+  association measurement and unrelated product calls to action.
 - Claims about zero network activity or the absence of hidden behavior remain
   prohibited without repeatable binary and network evidence.
+
+## Current evidence
+
+- Two fresh Private profiles passed the exact-host idle-startup policy with no
+  forbidden or unlisted endpoints after bundled filter fallbacks were reviewed
+  against their packaged asset manifest.
+- A synthetic unknown CONNECT target was rejected by the same gate, confirming
+  that an empty result was not caused by a permissive test implementation.
+- A hidden search-redirect measurement extension with all-URL request access
+  was removed from the package; a fresh runtime add-on inventory confirmed its
+  absence.
+- Account Sync remains available, while account/client association metric
+  generation and unrelated upstream product panels are disabled by default.
