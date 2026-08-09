@@ -17,3 +17,4 @@ engineering model.
 - [ADR 0004: Define the engine egress and remote-control boundary](0004-engine-egress-and-remote-control-boundary.md)
 - [ADR 0005: Minimize idle runtime and background Push connections](0005-idle-runtime-and-push-connection-policy.md)
 - [ADR 0006: Make privacy profiles an executable engine contract](0006-executable-privacy-profile-contract.md)
+- [ADR 0007: Keep browser-critical surfaces native and privilege separated](0007-native-browser-surface-boundaries.md)

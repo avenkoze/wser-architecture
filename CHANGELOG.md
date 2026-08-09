@@ -3,6 +3,17 @@
 This changelog records public architecture milestones rather than application
 release notes.
 
+## 2026-08-09
+
+- Moved Wser new-tab navigation behind a narrow native browser bridge that
+  resolves searches and web destinations with maintained browser services and
+  rejects non-web schemes.
+- Added a native, local-only Shield reporting boundary that distinguishes
+  third parties that ran from requests blocked by browser protection,
+  extensions, or policy.
+- Required browser-critical surfaces to preserve privilege separation while
+  their visual treatment continues to iterate through the web-first workflow.
+
 ## 2026-08-05
 
 - Added a two-profile compatibility smoke matrix covering identity, document,

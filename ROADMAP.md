@@ -10,6 +10,10 @@
 
 - Complete the browser shell and core panels in the web design studio.
 - Freeze interaction contracts before browser integration.
+- Keep navigation and security-sensitive inspection behind narrow native
+  browser bridges.
+- Integrate native tab and workspace state without duplicating the browser's
+  tab lifecycle in page content.
 - Validate keyboard access, reduced motion, and constrained viewports.
 
 ## Privacy system
@@ -29,4 +33,3 @@
 - Run repeatable privacy, compatibility, and performance suites.
 - Publish comparative claims only with equivalent recorded conditions.
 - Keep security checks, extension signing, sandboxing, and safe browsing intact.
-
