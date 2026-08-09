@@ -55,11 +55,18 @@ test. The test covers:
 9. serialization and restoration of workspace membership through native tab
    session state; and
 10. creation, workspace inheritance, and selection of a native replacement
-    when the last visible workspace tab closes.
+    when the last visible workspace tab closes; and
+11. stable tab count and correct visibility across 40 switches with 50 added
+    native tabs.
+
+The initial Windows headless development run measured a 32.75 ms median and
+40.10 ms p95 for those switches. This is a local regression baseline, not a
+cross-device product-performance claim. The automated 250 ms p95 ceiling only
+guards against a severe regression.
 
 Before release, verification must also cover a full application-process restart,
 keyboard and screen-reader behavior, and workspace-switch latency and memory
-overhead at realistic tab counts.
+overhead with realistic pages across the supported device matrix.
 
 ## Consequences
 
