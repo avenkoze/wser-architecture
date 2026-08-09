@@ -5,6 +5,12 @@ release notes.
 
 ## 2026-08-09
 
+- Added the native workspace foundation without duplicating the browser's tab
+  or session lifecycle in page content.
+- Bound local workspace membership to native tab session state, preserved
+  pinned tabs across workspaces, and made inactive-tab hiding source aware.
+- Verified native vertical tabs, workspace switching, new-tab inheritance, and
+  empty-workspace creation through focused browser integration coverage.
 - Moved Wser new-tab navigation behind a narrow native browser bridge that
   resolves searches and web destinations with maintained browser services and
   rejects non-web schemes.

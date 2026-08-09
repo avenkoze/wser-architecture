@@ -13,7 +13,8 @@
 - Keep navigation and security-sensitive inspection behind narrow native
   browser bridges.
 - Integrate native tab and workspace state without duplicating the browser's
-  tab lifecycle in page content.
+  tab lifecycle in page content. The foundation is complete; restart restore,
+  rename/delete behavior, and the native selector remain verification gates.
 - Validate keyboard access, reduced motion, and constrained viewports.
 
 ## Privacy system

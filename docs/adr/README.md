@@ -18,3 +18,4 @@ engineering model.
 - [ADR 0005: Minimize idle runtime and background Push connections](0005-idle-runtime-and-push-connection-policy.md)
 - [ADR 0006: Make privacy profiles an executable engine contract](0006-executable-privacy-profile-contract.md)
 - [ADR 0007: Keep browser-critical surfaces native and privilege separated](0007-native-browser-surface-boundaries.md)
+- [ADR 0008: Build workspaces on the native tab lifecycle](0008-native-workspace-tab-lifecycle.md)
