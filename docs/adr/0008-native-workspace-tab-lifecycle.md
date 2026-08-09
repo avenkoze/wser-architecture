@@ -29,6 +29,9 @@ without coupling the engine to the current visual prototype.
   Wser only reveals tabs hidden by that source, preserving other browser or
   extension hiding decisions.
 - Pinned tabs remain visible across workspaces.
+- Closing the last visible tab keeps the browser window open and delegates
+  replacement creation to Gecko's native new-tab lifecycle. Explicit window
+  closing and toolbar-less popup behavior remain unchanged.
 - Synchronization is event driven and workspace definitions are cached. No
   background timer or continuous tab polling is introduced.
 - The native workspace selector, rename/delete interactions, and final visual
@@ -50,7 +53,9 @@ test. The test covers:
 8. deletion of an active workspace with native tabs moved to a validated
    fallback; and
 9. serialization and restoration of workspace membership through native tab
-   session state.
+   session state; and
+10. creation, workspace inheritance, and selection of a native replacement
+    when the last visible workspace tab closes.
 
 Before release, verification must also cover a full application-process restart,
 keyboard and screen-reader behavior, and workspace-switch latency and memory
@@ -63,6 +68,8 @@ overhead at realistic tab counts.
 - Native tab behavior, session integration, and process ownership remain
   available to future workspace UI iterations.
 - Pinned tabs have intentionally global workspace scope in the first version.
+- Closing a workspace's last visible tab yields a native new tab rather than
+  unexpectedly terminating a window that still owns hidden workspace tabs.
 - Workspace synchronization between devices is deferred until its privacy,
   conflict, encryption, and account boundaries are designed.
 - The foundation is implemented and tested, but it is not a claim that every

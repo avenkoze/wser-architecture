@@ -15,6 +15,8 @@ release notes.
   from a deleted active workspace to a validated fallback.
 - Verified that local workspace membership is serialized and restored through
   the native tab session-state lifecycle; full process restart remains a gate.
+- Kept windows with hidden workspace tabs alive when the last visible tab is
+  closed, using Gecko's native replacement-tab lifecycle.
 - Moved Wser new-tab navigation behind a narrow native browser bridge that
   resolves searches and web destinations with maintained browser services and
   rejects non-web schemes.
