@@ -69,7 +69,9 @@ test. The test covers:
     names, roving focus, and Arrow/Home/End keyboard switching; and
 14. recovery after an intentional parent-process crash with a changed process
     ID, including workspace definitions, active workspace, native tab
-    membership, URLs, visibility, and selection.
+    membership, URLs, visibility, and selection; and
+15. global workspace selection and visibility across two native browser
+    windows, including attachment of a later window and detachment on close.
 
 The initial Windows headless development run measured a 32.75 ms median and
 40.10 ms p95 for those switches. This is a local regression baseline, not a

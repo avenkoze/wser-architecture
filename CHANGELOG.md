@@ -19,6 +19,8 @@ release notes.
 - Mirrored workspace metadata into native global session state, delayed
   workspace attachment until initial session restore completed, and verified
   full recovery after an intentional parent-process crash.
+- Verified global workspace selection and visibility across two native browser
+  windows, including later-window attachment and close-time detachment.
 - Kept windows with hidden workspace tabs alive when the last visible tab is
   closed, using Gecko's native replacement-tab lifecycle.
 - Added a 50-tab switch regression baseline that verifies stable native tab
