@@ -14,8 +14,9 @@
   browser bridges.
 - Integrate native tab and workspace state without duplicating the browser's
   tab lifecycle in page content. The foundation and same-profile process
-  restart restore are complete; cross-device performance and the accessible
-  native selector remain verification gates.
+  restart restore are complete. The native selector and keyboard contract are
+  integrated; screen-reader/high-contrast review and cross-device performance
+  remain verification gates.
 - Validate keyboard access, reduced motion, and constrained viewports.
 
 ## Privacy system

@@ -34,8 +34,9 @@ without coupling the engine to the current visual prototype.
   closing and toolbar-less popup behavior remain unchanged.
 - Synchronization is event driven and workspace definitions are cached. No
   background timer or continuous tab polling is introduced.
-- The native workspace selector, rename/delete interactions, and final visual
-  treatment are separate interface work built on this contract.
+- The native workspace selector lives in the browser sidebar above the native
+  vertical tabstrip and calls the workspace service directly. Final visual
+  treatment remains separate interface work built on this contract.
 
 ## Verification
 
@@ -60,14 +61,16 @@ test. The test covers:
     native tabs; and
 12. restoration after a same-profile application-process restart with a
     changed process ID, including workspace definitions, active workspace,
-    native tab membership, URLs, visibility, and selection.
+    native tab membership, URLs, visibility, and selection; and
+13. a native sidebar selector with single-selection semantics, accessible
+    names, roving focus, and Arrow/Home/End keyboard switching.
 
 The initial Windows headless development run measured a 32.75 ms median and
 40.10 ms p95 for those switches. This is a local regression baseline, not a
 cross-device product-performance claim. The automated 250 ms p95 ceiling only
 guards against a severe regression.
 
-Before release, verification must also cover keyboard and screen-reader
+Before release, verification must also cover screen-reader and high-contrast
 behavior, and workspace-switch latency and memory overhead with realistic pages
 across the supported device matrix. Crash recovery and additional supported
 platforms remain separate session-restore scenarios.
@@ -78,6 +81,8 @@ platforms remain separate session-restore scenarios.
   privileged tab state.
 - Native tab behavior, session integration, and process ownership remain
   available to future workspace UI iterations.
+- The first native selector uses event-driven preference updates and no
+  continuous polling or decorative motion.
 - Pinned tabs have intentionally global workspace scope in the first version.
 - Closing a workspace's last visible tab yields a native new tab rather than
   unexpectedly terminating a window that still owns hidden workspace tabs.

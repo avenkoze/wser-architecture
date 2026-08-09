@@ -21,6 +21,9 @@ release notes.
 - Added a 50-tab switch regression baseline that verifies stable native tab
   count and workspace visibility without presenting one machine as a general
   performance claim.
+- Added the native sidebar workspace selector above vertical tabs with
+  accessible single-selection state and Arrow/Home/End keyboard switching;
+  final visual treatment and screen-reader validation remain separate gates.
 - Moved Wser new-tab navigation behind a narrow native browser bridge that
   resolves searches and web destinations with maintained browser services and
   rejects non-web schemes.
