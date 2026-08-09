@@ -16,6 +16,9 @@ release notes.
 - Verified that local workspace membership is serialized and restored through
   both the native tab-state lifecycle and a same-profile application-process
   restart with a changed process ID.
+- Mirrored workspace metadata into native global session state, delayed
+  workspace attachment until initial session restore completed, and verified
+  full recovery after an intentional parent-process crash.
 - Kept windows with hidden workspace tabs alive when the last visible tab is
   closed, using Gecko's native replacement-tab lifecycle.
 - Added a 50-tab switch regression baseline that verifies stable native tab

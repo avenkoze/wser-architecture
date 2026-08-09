@@ -20,6 +20,9 @@ without coupling the engine to the current visual prototype.
   Workspaces filter those tabs instead of mirroring them in page content.
 - Workspace definitions are bounded, sanitized, and stored in the local
   profile. Cloud synchronization is out of scope for the first version.
+- Workspace definitions and the active workspace are also mirrored into
+  native global session state. The workspace service attaches only after the
+  initial session restore has loaded global metadata and native tab state.
 - Each tab is associated with a workspace through the browser's session-state
   custom tab value mechanism. Newly opened tabs inherit the active workspace.
 - Switching to an empty workspace creates an ordinary native new tab. The
@@ -63,7 +66,10 @@ test. The test covers:
     changed process ID, including workspace definitions, active workspace,
     native tab membership, URLs, visibility, and selection; and
 13. a native sidebar selector with single-selection semantics, accessible
-    names, roving focus, and Arrow/Home/End keyboard switching.
+    names, roving focus, and Arrow/Home/End keyboard switching; and
+14. recovery after an intentional parent-process crash with a changed process
+    ID, including workspace definitions, active workspace, native tab
+    membership, URLs, visibility, and selection.
 
 The initial Windows headless development run measured a 32.75 ms median and
 40.10 ms p95 for those switches. This is a local regression baseline, not a
@@ -72,8 +78,8 @@ guards against a severe regression.
 
 Before release, verification must also cover screen-reader and high-contrast
 behavior, and workspace-switch latency and memory overhead with realistic pages
-across the supported device matrix. Crash recovery and additional supported
-platforms remain separate session-restore scenarios.
+across the supported device matrix. Additional supported platforms remain
+separate session-restore scenarios.
 
 ## Consequences
 
@@ -81,6 +87,9 @@ platforms remain separate session-restore scenarios.
   privileged tab state.
 - Native tab behavior, session integration, and process ownership remain
   available to future workspace UI iterations.
+- Profile preferences remain the local baseline for ordinary startups, while
+  native global session state keeps workspace metadata in the same recovery
+  snapshot as tab membership after a crash.
 - The first native selector uses event-driven preference updates and no
   continuous polling or decorative motion.
 - Pinned tabs have intentionally global workspace scope in the first version.
