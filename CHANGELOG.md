@@ -11,6 +11,8 @@ release notes.
   pinned tabs across workspaces, and made inactive-tab hiding source aware.
 - Verified native vertical tabs, workspace switching, new-tab inheritance, and
   empty-workspace creation through focused browser integration coverage.
+- Added verified local rename and delete behavior, including migration of tabs
+  from a deleted active workspace to a validated fallback.
 - Moved Wser new-tab navigation behind a narrow native browser bridge that
   resolves searches and web destinations with maintained browser services and
   rejects non-web schemes.

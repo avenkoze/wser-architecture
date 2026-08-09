@@ -45,11 +45,14 @@ test. The test covers:
 3. active-workspace inheritance for new tabs;
 4. creation and selection of a native tab for an empty workspace;
 5. source-labelled hiding of inactive tabs; and
-6. restoration of the correct native tab selection when switching back.
+6. restoration of the correct native tab selection when switching back;
+7. local workspace rename and color changes; and
+8. deletion of an active workspace with native tabs moved to a validated
+   fallback.
 
 Before release, verification must also cover restart/session restoration,
-workspace rename and deletion, keyboard and screen-reader behavior, and
-workspace-switch latency and memory overhead at realistic tab counts.
+keyboard and screen-reader behavior, and workspace-switch latency and memory
+overhead at realistic tab counts.
 
 ## Consequences
 
