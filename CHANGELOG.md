@@ -14,7 +14,8 @@ release notes.
 - Added verified local rename and delete behavior, including migration of tabs
   from a deleted active workspace to a validated fallback.
 - Verified that local workspace membership is serialized and restored through
-  the native tab session-state lifecycle; full process restart remains a gate.
+  both the native tab-state lifecycle and a same-profile application-process
+  restart with a changed process ID.
 - Kept windows with hidden workspace tabs alive when the last visible tab is
   closed, using Gecko's native replacement-tab lifecycle.
 - Added a 50-tab switch regression baseline that verifies stable native tab
