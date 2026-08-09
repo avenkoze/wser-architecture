@@ -48,9 +48,11 @@ test. The test covers:
 6. restoration of the correct native tab selection when switching back;
 7. local workspace rename and color changes; and
 8. deletion of an active workspace with native tabs moved to a validated
-   fallback.
+   fallback; and
+9. serialization and restoration of workspace membership through native tab
+   session state.
 
-Before release, verification must also cover restart/session restoration,
+Before release, verification must also cover a full application-process restart,
 keyboard and screen-reader behavior, and workspace-switch latency and memory
 overhead at realistic tab counts.
 

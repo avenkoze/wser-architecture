@@ -13,6 +13,8 @@ release notes.
   empty-workspace creation through focused browser integration coverage.
 - Added verified local rename and delete behavior, including migration of tabs
   from a deleted active workspace to a validated fallback.
+- Verified that local workspace membership is serialized and restored through
+  the native tab session-state lifecycle; full process restart remains a gate.
 - Moved Wser new-tab navigation behind a narrow native browser bridge that
   resolves searches and web destinations with maintained browser services and
   rejects non-web schemes.
