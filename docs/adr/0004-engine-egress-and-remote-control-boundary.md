@@ -91,3 +91,11 @@ a familiar provider.
   absence.
 - Account Sync remains available, while account/client association metric
   generation and unrelated upstream product panels are disabled by default.
+- The signed, unmodified blocking extension remains a release dependency and
+  may retrieve third-party filter sources, including an observed
+  `pgl.yoyo.org` hosts-list request. Its complete packaged asset manifest and
+  runtime endpoints remain part of the release egress review rather than being
+  labeled as zero network activity.
+- Test-enabled builds exclude the distribution XPI because Gecko's mochitest
+  harness force-installs every distribution extension and correctly rejects
+  its live third-party requests. Release builds continue to bundle it.

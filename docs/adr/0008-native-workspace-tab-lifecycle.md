@@ -72,16 +72,22 @@ test. The test covers:
     membership, URLs, visibility, and selection; and
 15. global workspace selection and visibility across two native browser
     windows, including attachment of a later window and detachment on close.
+16. Windows forced-colors behavior with system colors and a selected-state
+    indicator that does not depend on workspace color; and
+17. the full focused suite with browser accessibility checks enabled, plus a
+    50-tab run in which ten documents contain deterministic DOM, layout, and
+    form-control work.
 
-The initial Windows headless development run measured a 32.75 ms median and
-40.10 ms p95 for those switches. This is a local regression baseline, not a
-cross-device product-performance claim. The automated 250 ms p95 ceiling only
-guards against a severe regression.
+The latest local Windows development runs measured 6.98 ms p95 normally and
+8.96 ms p95 with accessibility checks enabled. This is a local regression
+baseline, not a cross-device product-performance claim. The automated 250 ms
+p95 ceiling only guards against a severe regression.
 
-Before release, verification must also cover screen-reader and high-contrast
-behavior, and workspace-switch latency and memory overhead with realistic pages
-across the supported device matrix. Additional supported platforms remain
-separate session-restore scenarios.
+Before release, verification must still include manual screen-reader review,
+workspace-switch latency and memory overhead with representative full pages
+across the supported device matrix, and separate session-restore scenarios on
+additional supported platforms. Automated high-contrast, accessibility, and
+deterministic loaded-document checks do not replace that matrix.
 
 ## Consequences
 

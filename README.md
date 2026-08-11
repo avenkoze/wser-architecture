@@ -37,7 +37,8 @@ an explicit contract and verified separately from visual design.
 | Privacy | Private and Socialise protection profiles |
 | Tracking protection | Signed filter extension plus browser-level isolation |
 | Transparency | Local Wser Shield explanations; no browsing-history upload |
-| Resources | Observable tab sleeping and memory controls |
+| Resources | On-demand native measurements and reversible tab sleeping |
+| Mail | Opt-in provider adapters behind a credential-isolated native service |
 
 ## Repository map
 
@@ -51,4 +52,3 @@ an explicit contract and verified separately from visual design.
 Privacy, compatibility, and performance statements are treated as engineering
 claims. Comparative claims require repeatable measurements under recorded,
 equivalent conditions. Unmeasured goals are labeled as goals, not results.
-

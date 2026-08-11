@@ -19,3 +19,4 @@ engineering model.
 - [ADR 0006: Make privacy profiles an executable engine contract](0006-executable-privacy-profile-contract.md)
 - [ADR 0007: Keep browser-critical surfaces native and privilege separated](0007-native-browser-surface-boundaries.md)
 - [ADR 0008: Build workspaces on the native tab lifecycle](0008-native-workspace-tab-lifecycle.md)
+- [ADR 0009: Bound native resource and mail panels](0009-native-resource-and-mail-panel-boundaries.md)

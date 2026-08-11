@@ -15,7 +15,8 @@
 - Integrate native tab and workspace state without duplicating the browser's
   tab lifecycle in page content. The foundation and same-profile process
   restart and parent-process crash recovery are complete. The native selector
-  and keyboard contract are integrated; screen-reader/high-contrast review and
+  and keyboard contract are integrated. Automated high-contrast and
+  accessibility checks are complete; manual screen-reader review and
   cross-device performance remain verification gates.
 - Validate keyboard access, reduced motion, and constrained viewports.
 
@@ -27,12 +28,27 @@
 
 ## Resource management
 
-- Expose understandable RAM and CPU measurements.
-- Add reversible limits and tab-sleeping controls.
+- Expose understandable RAM and CPU measurements through an on-demand native
+  service without origins, URLs, or a default polling timer. The service
+  foundation and focused browser coverage are complete.
+- Add the final panel over validated, reversible tab-sleeping and memory
+  controls. Unsupported hard CPU or RAM limits must not be implied.
 - Measure overhead before enabling continuous monitoring by default.
+
+## Mail panel
+
+- Keep the panel renderer separate from provider credentials and privileged
+  account state.
+- Select providers and register Wser-owned OAuth applications before connecting
+  real accounts.
+- Verify least scopes, token storage, account partitioning, message
+  sanitization, private-window exclusion, logout, revocation, and endpoint
+  inventory before release.
 
 ## Release verification
 
 - Run repeatable privacy, compatibility, and performance suites.
 - Publish comparative claims only with equivalent recorded conditions.
 - Keep security checks, extension signing, sandboxing, and safe browsing intact.
+- Keep live third-party distribution extensions out of test-enabled builds;
+  review their signed package and endpoint inventory in release builds.

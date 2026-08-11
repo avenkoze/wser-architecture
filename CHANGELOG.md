@@ -3,6 +3,24 @@
 This changelog records public architecture milestones rather than application
 release notes.
 
+## 2026-08-11
+
+- Added an on-demand parent-process resource service contract that exposes
+  serializable RAM and sampled CPU data without origins, URLs, privileged
+  objects, or a default polling loop.
+- Limited resource controls to validated reversible browser policies and
+  explicitly rejected unsupported hard CPU-limit claims.
+- Defined credential, provider, content-sanitization, account-partitioning,
+  private-window, and endpoint boundaries for the future mail panel.
+- Added Windows forced-colors coverage and passed the focused workspace suite
+  with browser accessibility checks enabled.
+- Extended the 50-tab regression run with deterministic DOM and layout work;
+  recorded 6.98 ms normal and 8.96 ms accessibility-check p95 local baselines.
+- Separated the signed blocking extension from test-enabled builds after
+  Gecko's deny-network guard identified a live third-party filter-list request;
+  release builds continue to bundle the unmodified signed extension and must
+  inventory its runtime endpoints.
+
 ## 2026-08-09
 
 - Added the native workspace foundation without duplicating the browser's tab
