@@ -35,6 +35,9 @@
   the existing rail, over validated, reversible tab-sleeping and memory
   controls. No second sidebar panel is registered, and unsupported hard CPU or
   RAM limits are not presented.
+- A compact native memory/effective-CPU indicator is integrated beside the
+  address bar and defaults on. Its setting tears down the shared service
+  subscription; multiple browser windows do not create independent samplers.
 - Measure visible-section sampling overhead across release platforms before
   changing its conservative lifecycle or cadence.
 

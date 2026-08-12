@@ -37,7 +37,7 @@ an explicit contract and verified separately from visual design.
 | Privacy | Private and Socialise protection profiles |
 | Tracking protection | Signed filter extension plus browser-level isolation |
 | Transparency | Local Wser Shield explanations; no browsing-history upload |
-| Resources | On-demand native measurements and reversible tab sleeping |
+| Resources | Subscriber-driven native measurements and reversible tab sleeping |
 | Mail | Opt-in provider adapters behind a credential-isolated native service |
 
 ## Repository map

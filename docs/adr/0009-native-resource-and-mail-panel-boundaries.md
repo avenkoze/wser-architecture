@@ -18,8 +18,9 @@ account state and expose narrow, serializable contracts.
 
 The resource service:
 
-- samples native process information only after an explicit request and does
-  not start a default polling timer;
+- samples native process information only after an explicit snapshot request or
+  while a visible product surface has subscribed; it never starts an
+  unconditional background polling timer;
 - returns bounded process type, process ID, memory, and sampled CPU-rate data,
   excluding origins, URLs, windows, threads, and privileged objects;
 - maps settings only to validated, reversible tab-sleep and warning policies;
@@ -58,6 +59,15 @@ browser mechanisms. Visible-section sampling must stop when the section closes,
 the native tab rail collapses, the sidebar is hidden, or the element detaches;
 broader or faster sampling requires a measured overhead budget.
 
+The compact toolbar indicator is enabled by default but remains user
+controllable. All browser windows share one service subscription loop at a
+two-second cadence; it starts with the first subscriber and stops when the last
+subscriber leaves. Disabling the setting removes the subscription rather than
+merely hiding its output. Memory is displayed as a browser-process total.
+Effective GHz may be derived only from native process cycle-count and CPU-time
+deltas; where those counters are unavailable, the UI falls back to sampled CPU
+activity instead of inventing a frequency.
+
 Mail integration must use mocked providers until explicit provider authority
 exists. Release verification then requires scope and redirect review, secret-
 storage inspection, account-isolation and logout tests, hostile-message
@@ -89,3 +99,7 @@ surface exists.
   is registered. It samples only while expanded and visible, and delegates its
   reversible settings and actions to the resource service. Focused normal and
   accessibility-check runs cover placement, lifecycle, and control delegation.
+- A default-on compact toolbar subscriber renders directly beside the native
+  address bar. Focused browser coverage verifies placement, real snapshot
+  rendering, shared subscription teardown, the Preferences control, and the
+  accessible label in both normal and accessibility-check runs.

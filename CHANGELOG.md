@@ -5,6 +5,13 @@ release notes.
 
 ## 2026-08-12
 
+- Added a default-on, user-disableable native address-bar resource indicator
+  for compact memory and effective CPU-frequency visibility.
+- Centralized two-second live sampling in the bounded resource service so
+  multiple windows share one loop and disabling the last visible subscriber
+  stops it. Unsupported frequency counters fall back to sampled CPU activity.
+- Verified toolbar placement, Preferences control, subscription teardown, and
+  accessible naming with focused normal and accessibility-check browser runs.
 - Added a compact resource section directly below the native vertical tabstrip,
   using the existing bounded resource-service contract. It is not registered as
   a second sidebar panel.
