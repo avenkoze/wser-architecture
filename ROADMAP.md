@@ -31,10 +31,11 @@
 - Expose understandable RAM and CPU measurements through an on-demand native
   service without origins, URLs, or a default polling timer. The service
   foundation and focused browser coverage are complete.
-- The native Performance panel is integrated over validated, reversible
-  tab-sleeping and memory controls. Unsupported hard CPU or RAM limits are not
-  presented.
-- Measure visible-panel sampling overhead across release platforms before
+- The compact resource section is integrated below the native vertical tabs in
+  the existing rail, over validated, reversible tab-sleeping and memory
+  controls. No second sidebar panel is registered, and unsupported hard CPU or
+  RAM limits are not presented.
+- Measure visible-section sampling overhead across release platforms before
   changing its conservative lifecycle or cadence.
 
 ## Mail panel

@@ -5,10 +5,11 @@ release notes.
 
 ## 2026-08-12
 
-- Added the native Performance sidebar renderer over the existing bounded
-  resource-service contract.
-- Limited live sampling to the visible panel lifecycle and stopped its timer
-  when the panel is hidden or detached.
+- Added a compact resource section directly below the native vertical tabstrip,
+  using the existing bounded resource-service contract. It is not registered as
+  a second sidebar panel.
+- Limited live sampling to the expanded section while the native tab rail is
+  expanded and visible; closing or collapsing the rail stops its timer.
 - Exposed process memory, sampled CPU activity, validated tab-sleep policy,
   manual background sleeping, and maintained memory recovery without implying
   an operating-system hard quota.

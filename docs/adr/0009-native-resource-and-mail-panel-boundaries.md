@@ -54,8 +54,9 @@ decision before account connection can ship.
 Resource integration must prove that reports are plain serializable data,
 first and subsequent CPU samples behave correctly, unsupported controls are
 rejected, policy ranges are enforced, and manual actions delegate to maintained
-browser mechanisms. Visible-panel sampling must stop when the panel is hidden
-or detached; broader or faster sampling requires a measured overhead budget.
+browser mechanisms. Visible-section sampling must stop when the section closes,
+the native tab rail collapses, the sidebar is hidden, or the element detaches;
+broader or faster sampling requires a measured overhead budget.
 
 Mail integration must use mocked providers until explicit provider authority
 exists. Release verification then requires scope and redirect review, secret-
@@ -83,7 +84,8 @@ surface exists.
 - Focused browser coverage verifies serializable snapshots, CPU-rate deltas,
   policy validation, rejection of a hard-CPU-limit field, native tab sleeping,
   and memory reclaim delegation.
-- The registered native Performance panel renders bounded process summaries,
-  samples only while visible, and delegates its reversible settings and actions
-  to the resource service. Focused normal and accessibility-check runs cover
-  rendering and control delegation.
+- The compact resource section renders immediately below the native vertical
+  tabstrip in the existing rail; no second sidebar panel or navigation hierarchy
+  is registered. It samples only while expanded and visible, and delegates its
+  reversible settings and actions to the resource service. Focused normal and
+  accessibility-check runs cover placement, lifecycle, and control delegation.
