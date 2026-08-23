@@ -3,6 +3,22 @@
 This changelog records public architecture milestones rather than application
 release notes.
 
+## 2026-08-23
+
+- Made Private and Socialise directly selectable in the native Privacy settings
+  surface and advanced the executable engine contract to version 3.
+- Defined Private as a crowd-oriented fingerprint posture rather than a unique
+  or per-request randomized identity. Kept release-population anonymity claims
+  behind stable-build, repeated external measurement.
+- Hid raw local WebRTC host candidates in both profiles. Private now accepts
+  relay candidates only; Socialise permits public server-reflexive candidates
+  when compatibility requires direct peer connectivity.
+- Verified the profile transition contract, native selector, real ICE candidate
+  classes, and eight read-only compatibility targets per profile without
+  recording literal network addresses.
+- Consolidated resource monitor and tab-sleep measurements into the shared
+  parent-process snapshot cache with per-consumer sampling cadence.
+
 ## 2026-08-12
 
 - Added a default-on, user-disableable native address-bar resource indicator

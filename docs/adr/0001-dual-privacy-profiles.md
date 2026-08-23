@@ -14,11 +14,11 @@ are simultaneously enabled or disabled.
 
 Wser will expose two mutually exclusive protection profiles:
 
-- **Private** is the default. It combines the strongest compatibility-conscious
-  tracking and fingerprinting protections supported by the maintained browser
-  platform.
+- **Private** is the default. It targets a standardized crowd fingerprint and
+  combines strict tracking protection with relay-only WebRTC candidate policy.
 - **Socialise** prioritizes compatibility for identity, communication, payment,
-  and social-media workflows without disabling the shared security baseline.
+  and social-media workflows without disabling the shared security baseline or
+  exposing raw local WebRTC host addresses.
 
 The interface may use switch-like controls, but the underlying preference is a
 single profile value. A profile change is therefore atomic.
@@ -37,6 +37,10 @@ Both profiles retain:
 ## Consequences
 
 - Socialise is not an unprotected mode.
+- Private is not a “unique identity” mode. Per-request identity inconsistency is
+  not treated as anonymity.
+- Private can require a configured relay for peer-to-peer communication;
+  Socialise may expose a public server-reflexive candidate for compatibility.
 - Private can use stricter social and email tracker classification.
 - Site breakage is handled with visible, site-scoped recovery before any global
   reduction in protection is considered.
@@ -48,4 +52,3 @@ Both profiles retain:
 Both profiles require separate privacy and compatibility test runs. Private is
 the product default only after clean-profile tests confirm that its complete
 preference contract is active.
-

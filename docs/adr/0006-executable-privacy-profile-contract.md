@@ -21,10 +21,13 @@ security baseline.
   release tests can distinguish a selected label from an applied contract.
 - Private enables full platform fingerprint resistance, content letterboxing,
   web-locale standardization, and the stricter anti-tracking, link-cleaning,
-  referrer, bounce-tracking, and background-network policy.
+  referrer, bounce-tracking, and background-network policy. Its WebRTC policy
+  accepts relay candidates only.
 - Socialise may relax normal-window compatibility surfaces and enable the Push
   transport. It keeps full fingerprint resistance in private windows while
   using the compatibility-oriented fingerprinting profile in normal windows.
+  It permits public server-reflexive WebRTC candidates but still hides raw local
+  host candidates.
 - Total Cookie Protection, Global Privacy Control, core tracker and malicious
   content defenses, HTTPS protection, process isolation, and extension signing
   remain common invariants.
@@ -43,6 +46,9 @@ Release candidates must demonstrate that:
    evidence policy.
 6. external fingerprinting tests record the exposed surfaces and repeat across
    three clean profiles; one pass/fail label is not sufficient evidence.
+7. a real candidate-gathering test records only candidate classes and confirms
+   that Private exposes relay candidates only and neither profile exposes raw
+   local host addresses.
 
 ## Consequences
 
@@ -99,3 +105,19 @@ Release candidates must demonstrate that:
 - No credentials, payment, challenge response, camera access, or media playback
   was submitted. These results are loading and API smoke evidence, not completed
   transaction evidence.
+
+## Version 3 WebRTC and selector evidence
+
+- The native Privacy settings selector changed the authoritative engine value
+  in both directions and restored the hardened profile without mismatches.
+- With an external STUN service configured, Private produced no candidate when
+  no relay was configured. Socialise produced one public server-reflexive
+  candidate. Neither profile produced a raw local, private, loopback, or host
+  candidate.
+- Both profiles loaded the same eight read-only identity, media, payment,
+  challenge, and WebRTC smoke targets. This verifies basic loading and API
+  availability, not full authentication, payment, challenge, or call workflows.
+- The measured Private surfaces used the maintained platform's standardized
+  thread count, locale, GMT-equivalent timezone, letterboxed viewport, and
+  generic WebGL identity. A development-build version string is not evidence of
+  a release-population anonymity set and is not replaced with a fake user agent.
