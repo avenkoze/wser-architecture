@@ -2,6 +2,8 @@
 
 - **Status:** Accepted
 - **Date:** 2026-08-05
+- **Note:** The fingerprint strategy is superseded by ADR 0010; the executable,
+  versioned profile contract remains accepted.
 
 ## Context
 

@@ -2,6 +2,7 @@
 
 - **Status:** Accepted
 - **Date:** 2026-08-03
+- **Note:** The Private fingerprint strategy is superseded by ADR 0010.
 
 ## Context
 

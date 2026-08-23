@@ -5,6 +5,14 @@ release notes.
 
 ## 2026-08-23
 
+- Advanced the executable privacy contract to version 4. Full Private now uses
+  coherent top-level-site and browsing-session keyed fingerprint randomization;
+  Socialise retains site-keyed graphical protection while restoring timer and
+  peer-connectivity compatibility.
+- Verified stable repeated canvas reads, different cross-site keyed outputs,
+  profile-distinct outputs, relay-only Full Private candidate behavior, and no
+  raw local WebRTC candidates in either profile. External anonymity-set labels
+  remain a separate clean-profile release gate.
 - Made Private and Socialise directly selectable in the native Privacy settings
   surface and advanced the executable engine contract to version 3.
 - Defined Private as a crowd-oriented fingerprint posture rather than a unique
