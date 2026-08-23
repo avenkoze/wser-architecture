@@ -3,8 +3,22 @@
 This changelog records public architecture milestones rather than application
 release notes.
 
-## 2026-08-23
+## 2026-08-24
 
+- Advanced the executable privacy contract to version 6. Full Private now
+  applies separately domain-separated, origin/session keyed behavior to offline
+  audio and hardware concurrency alongside Firefox's keyed canvas and WebGL
+  protections. Live audio output and the Socialise compatibility path remain
+  untouched by the new surfaces.
+- Full Private disables remote fingerprinting web-compat overrides; Socialise
+  retains them. A clean-profile Cover Your Tracks run classified canvas, WebGL,
+  audio, and hardware concurrency as randomized and reported a randomized
+  fingerprint.
+- Adopted the public architectural principle used by Helium—session-scoped
+  feature tokens derived per site—through an independent Gecko implementation,
+  without copying GPL-licensed source into the MPL codebase.
+
+## 2026-08-23
 - Advanced the executable privacy contract to version 4. Full Private now uses
   coherent top-level-site and browsing-session keyed fingerprint randomization;
   Socialise retains site-keyed graphical protection while restoring timer and

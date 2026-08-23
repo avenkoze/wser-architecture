@@ -38,6 +38,22 @@ that would prompt, block extraction, force a constant value over a keyed value,
 or duplicate another selected target are excluded when they conflict with the
 coherent-output contract.
 
+Version 6 extends that contract to the four first-party comparison surfaces
+used by Cover Your Tracks: canvas, WebGL, offline audio, and reported hardware
+concurrency. The new audio and hardware surfaces use separate domain separators
+over the engine's session key and full document origin, so sibling hosts do not
+collapse to the same value. Offline audio receives a deterministic,
+signal-preserving perturbation of at most 0.01% only after an
+`OfflineAudioContext` render; live audible output is untouched. Hardware
+concurrency is selected from common even desktop buckets between 2 and 16 and
+is deliberately decoupled from the physical core count; Socialise retains
+Firefox's true value. Full Private also disables remotely distributed FPP
+web-compat exceptions, while Socialise retains them.
+
+This design was informed by Helium's public session-token/per-origin-token
+architecture, then implemented independently in Gecko. Helium is GPL-3.0 and
+Wser's Gecko changes remain MPL-2.0; source code was not copied between them.
+
 ## Invariants
 
 - Safe Browsing, HTTPS protection, state partitioning, process isolation,
@@ -52,17 +68,27 @@ coherent-output contract.
 
 ## Verification
 
-The version 4 release gate requires:
+The version 6 release gate requires:
 
 1. complete preference-contract tests for both profiles and invalid fallback;
 2. stable repeated canvas extraction within each tested top-level site;
 3. different keyed canvas output across distinct top-level sites;
-4. distinct Full Private and Socialise outputs under equivalent conditions;
-5. no Full Private ICE candidate without a configured relay, and no raw local
+4. stable repeated offline-audio output within a tested top-level site and
+   different keyed audio output across tested origins, including sibling hosts;
+5. hardware-concurrency values restricted to plausible even buckets and keyed
+   variation across a multi-origin test set;
+6. distinct Full Private and Socialise outputs under equivalent conditions;
+7. no Full Private ICE candidate without a configured relay, and no raw local
    host candidate in either profile;
-6. separate timer-resolution evidence for privacy and compatibility behavior;
-7. repeated clean-profile external tests before any public population or
+8. separate timer-resolution evidence for privacy and compatibility behavior;
+9. repeated clean-profile external tests before any public population or
    comparative privacy claim.
+
+The first clean-profile v6 external run made Cover Your Tracks classify canvas,
+WebGL, audio, and hardware concurrency as randomized and report a randomized
+fingerprint. This is verification evidence for that build and session, not a
+guarantee that every external dataset or future test revision will use the same
+classification.
 
 ## Consequences
 
@@ -74,3 +100,10 @@ The version 4 release gate requires:
   is working correctly.
 - The two modes must be evaluated separately. Combining their best results into
   one browser score would be misleading.
+
+## References
+
+- [Helium Chromium source](https://github.com/imputnet/helium-chromium)
+- [Helium noise-token architecture](https://github.com/imputnet/helium-chromium/blob/main/patches/helium/core/noise/core.patch)
+- [Helium hardware-concurrency patch](https://github.com/imputnet/helium-chromium/blob/main/patches/helium/core/noise/hardware-concurrency.patch)
+- [Helium audio patch](https://github.com/imputnet/helium-chromium/blob/main/patches/helium/core/noise/audio.patch)
