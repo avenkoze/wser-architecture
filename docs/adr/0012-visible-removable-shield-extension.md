@@ -62,8 +62,10 @@ The source gate covers manifest identity, visible toolbar registration,
 declared zero data collection, authenticated-rule signature/expiry/rollback
 checks, local detector fixtures, bounded session-first history, and WebExtension
 lint. A real Wser/Firefox probe covers reserved test-rule interception, one-time
-bypass, trusted-site recovery, live report generation, and native Safe Browsing
-remaining independent when Shield is disabled.
+bypass, trusted-site recovery, positive request/response header branches,
+warning and scan notification state, bounded scan fallback, opt-in history
+restoration after disable/enable, live report generation, and native Safe
+Browsing remaining independent when Shield is disabled.
 
 Production reputation content and update transport, signed-XPI installation,
 removal persistence across restart/upgrade, and visible notification evidence
