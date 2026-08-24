@@ -5,6 +5,10 @@ release notes.
 
 ## 2026-08-24
 
+- Added an authenticated, expiring, rollback-protected Shield bootstrap rule
+  path for reserved test domains. Real-browser coverage now exercises warning
+  decisions, session-first history, live reports, and Safe Browsing independence;
+  production rules, signed distribution, and removal persistence remain gated.
 - Defined Wser Shield as the single visible, signed, user-removable first-party
   extension. Its site evidence and bounded local history remain separate from
   native Safe Browsing/TLS/download protection and from ad/tracker filtering.

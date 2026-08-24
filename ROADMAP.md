@@ -32,8 +32,9 @@
   a local and clearable evidence history.
 - Keep phishing/malware reputation, TLS, downloads, sandboxing, and extension
   signing in the maintained native security layer.
-- Do not enable Shield navigation blocking until authenticated-rule, bypass,
-  removal-persistence, and Safe Browsing coexistence tests pass in a real browser.
+- Authenticated-rule and bypass behavior now run against reserved test domains;
+  production navigation blocking remains gated on signed distribution,
+  removal-persistence, and production rule-update evidence.
 
 ## Resource management
 

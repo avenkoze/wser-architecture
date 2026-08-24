@@ -58,8 +58,14 @@ privacy review and explicit user data contract.
 
 ## Verification
 
-The current source gate covers manifest identity, visible toolbar registration,
-declared zero data collection, local detector fixtures, bounded session history,
-and WebExtension lint. Automatic navigation blocking and persistent Socialise
-history remain unavailable until real-browser integration tests cover their
-security and privacy contracts.
+The source gate covers manifest identity, visible toolbar registration,
+declared zero data collection, authenticated-rule signature/expiry/rollback
+checks, local detector fixtures, bounded session-first history, and WebExtension
+lint. A real Wser/Firefox probe covers reserved test-rule interception, one-time
+bypass, trusted-site recovery, live report generation, and native Safe Browsing
+remaining independent when Shield is disabled.
+
+Production reputation content and update transport, signed-XPI installation,
+removal persistence across restart/upgrade, and visible notification evidence
+remain release gates. The alpha bootstrap bundle contains reserved test domains
+only.
