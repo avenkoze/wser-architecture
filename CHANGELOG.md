@@ -5,6 +5,15 @@ release notes.
 
 ## 2026-08-24
 
+- Advanced the executable privacy profile to version 7 and published
+  fingerprint-contract version 1 at runtime. The source gate now requires every
+  maintained engine fingerprint target to have an explicit protection or
+  compatibility strategy and fails closed when the inventory drifts.
+- Expanded the local privacy audit across identification, geometry, Intl, CSS
+  media, fonts, storage, permissions, device APIs, media capabilities, speech,
+  workers, WebGPU availability, and complex WebGL readback. External anonymity
+  labels and permission-granted hardware behavior remain separate release
+  evidence rather than product guarantees.
 - Advanced the executable privacy contract to version 6. Full Private now
   applies separately domain-separated, origin/session keyed behavior to offline
   audio and hardware concurrency alongside Firefox's keyed canvas and WebGL
