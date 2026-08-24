@@ -5,6 +5,13 @@ release notes.
 
 ## 2026-08-24
 
+- Kept search-provider selection in Gecko's native normal/private engine
+  contract. New-tab content displays the active provider and delegates changes
+  to native Search settings instead of forcing an engine or replacing signed
+  search configuration.
+- Limited optional result-region hints to parent-validated provider hosts and
+  fixed parameters. The selector does not represent IP location or network
+  anonymity, and unknown providers remain untouched.
 - Advanced the executable privacy profile to version 7 and published
   fingerprint-contract version 1 at runtime. The source gate now requires every
   maintained engine fingerprint target to have an explicit protection or

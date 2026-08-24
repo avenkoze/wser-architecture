@@ -21,3 +21,4 @@ engineering model.
 - [ADR 0008: Build workspaces on the native tab lifecycle](0008-native-workspace-tab-lifecycle.md)
 - [ADR 0009: Bound native resource and mail panels](0009-native-resource-and-mail-panel-boundaries.md)
 - [ADR 0010: Separate unlinkability from compatibility](0010-unlinkable-private-profile.md)
+- [ADR 0011: Keep search-provider selection native and user controlled](0011-native-search-provider-boundary.md)
