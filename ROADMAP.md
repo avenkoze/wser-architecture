@@ -26,6 +26,15 @@
 - Integrate Private and Socialise as one mutually exclusive preference.
 - Validate site-specific recovery without globally disabling protection.
 
+## Site protection
+
+- Ship Wser Shield as a signed, visible, removable distribution extension with
+  a local and clearable evidence history.
+- Keep phishing/malware reputation, TLS, downloads, sandboxing, and extension
+  signing in the maintained native security layer.
+- Do not enable Shield navigation blocking until authenticated-rule, bypass,
+  removal-persistence, and Safe Browsing coexistence tests pass in a real browser.
+
 ## Resource management
 
 - Expose understandable RAM and CPU measurements through an on-demand native

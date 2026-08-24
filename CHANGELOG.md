@@ -5,6 +5,12 @@ release notes.
 
 ## 2026-08-24
 
+- Defined Wser Shield as the single visible, signed, user-removable first-party
+  extension. Its site evidence and bounded local history remain separate from
+  native Safe Browsing/TLS/download protection and from ad/tracker filtering.
+- Retired the separate auditor product name, kept heuristic findings out of
+  default hard blocking, and placed authenticated rules, warning bypass,
+  removal persistence, and real-browser coexistence behind release gates.
 - Kept search-provider selection in Gecko's native normal/private engine
   contract. New-tab content displays the active provider and delegates changes
   to native Search settings instead of forcing an engine or replacing signed
