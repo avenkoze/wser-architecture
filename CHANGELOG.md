@@ -3,6 +3,16 @@
 This changelog records public architecture milestones rather than application
 release notes.
 
+## 2026-08-26
+
+- Added a native automatic wallpaper choice backed by the browser's signed
+  wallpaper catalogue. Automatic rotation is limited to an explicit reviewed
+  allow-list, selects once per new-tab instance, and preserves the browser's
+  normal wallpaper, disable, and user-upload paths.
+- Kept competitor artwork and arbitrary wallpaper-search results out of the
+  product. Catalogue unavailability falls back to the normal empty background
+  rather than fetching an unreviewed source.
+
 ## 2026-08-24
 
 - Added an authenticated, expiring, rollback-protected Shield bootstrap rule
