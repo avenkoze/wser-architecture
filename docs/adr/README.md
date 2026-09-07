@@ -25,3 +25,4 @@ engineering model.
 - [ADR 0012: Ship Wser Shield as a visible removable extension](0012-visible-removable-shield-extension.md)
 - [ADR 0015: Bind Shield runtime monitoring to scan ownership](0015-shield-runtime-monitor-ownership.md)
 - [ADR 0016: Scope native Shield evidence to documents and request outcomes](0016-native-shield-evidence-lifecycle.md)
+- [ADR 0017: Bound Shield policy response sampling](0017-bound-policy-response-sampling.md)

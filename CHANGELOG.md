@@ -5,6 +5,8 @@ release notes.
 
 ## 2026-09-07
 
+- Bounded Shield policy-body sampling and cancellation, with explicit truncation
+  and redirect rejection. Stream and local HTTP tests passed (ADR 0017).
 - Scoped native Shield evidence to the document and retained independent loaded
   and blocked request outcomes. Unknown extension blockers receive a generic
   label; focused browser/unit checks and the development build passed (ADR 0016).
