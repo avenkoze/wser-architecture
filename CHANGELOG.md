@@ -5,6 +5,9 @@ release notes.
 
 ## 2026-09-07
 
+- Distinguished unavailable cookie measurements from zero counts and made the
+  partial-evidence score visible. Two-container isolation and controlled failure
+  checks passed; partition/private-window coverage remains open (ADR 0018).
 - Bounded Shield policy-body sampling and cancellation, with explicit truncation
   and redirect rejection. Stream and local HTTP tests passed (ADR 0017).
 - Scoped native Shield evidence to the document and retained independent loaded
