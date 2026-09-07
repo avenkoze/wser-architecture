@@ -5,6 +5,9 @@ release notes.
 
 ## 2026-09-08
 
+- Shared preferences resource snapshots and stopped hidden-pane sampling;
+  policy observers keep sidebar and preferences synchronized. Focused browser
+  checks and the frontend build passed (ADR 0020).
 - Moved runtime observations into bounded extension scan memory and excluded
   page-controlled messages from risk scoring. Storage-forgery, ownership and
   isolated browser checks passed; hook authenticity is not claimed (ADR 0019).
