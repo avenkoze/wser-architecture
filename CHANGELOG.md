@@ -3,6 +3,12 @@
 This changelog records public architecture milestones rather than application
 release notes.
 
+## 2026-09-08
+
+- Moved runtime observations into bounded extension scan memory and excluded
+  page-controlled messages from risk scoring. Storage-forgery, ownership and
+  isolated browser checks passed; hook authenticity is not claimed (ADR 0019).
+
 ## 2026-09-07
 
 - Distinguished unavailable cookie measurements from zero counts and made the

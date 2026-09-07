@@ -27,3 +27,4 @@ engineering model.
 - [ADR 0016: Scope native Shield evidence to documents and request outcomes](0016-native-shield-evidence-lifecycle.md)
 - [ADR 0017: Bound Shield policy response sampling](0017-bound-policy-response-sampling.md)
 - [ADR 0018: Preserve unavailable cookie evidence](0018-unavailable-cookie-evidence.md)
+- [ADR 0019: Keep page runtime observations unverified and unscored](0019-unverified-runtime-observations.md)
