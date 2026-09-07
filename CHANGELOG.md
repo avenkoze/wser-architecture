@@ -5,6 +5,10 @@ release notes.
 
 ## 2026-09-07
 
+- Bound Shield runtime monitoring to the authorized scan document and added
+  teardown on completion or disconnect. Isolated browser checks passed for
+  tab isolation, restoration and navigation cancellation; runtime signals
+  remain page-controlled heuristic evidence (ADR 0015).
 - Aligned workspace-owned hidden tabs with the loaded-tab sleep budget while
   retaining protection checks and a focused rollback preference.
 - Corrected owning-window synchronization for tab assignment and scoped

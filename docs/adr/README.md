@@ -23,3 +23,4 @@ engineering model.
 - [ADR 0010: Separate unlinkability from compatibility](0010-unlinkable-private-profile.md)
 - [ADR 0011: Keep search-provider selection native and user controlled](0011-native-search-provider-boundary.md)
 - [ADR 0012: Ship Wser Shield as a visible removable extension](0012-visible-removable-shield-extension.md)
+- [ADR 0015: Bind Shield runtime monitoring to scan ownership](0015-shield-runtime-monitor-ownership.md)
