@@ -3,6 +3,14 @@
 This changelog records public architecture milestones rather than application
 release notes.
 
+## 2026-09-07
+
+- Aligned workspace-owned hidden tabs with the loaded-tab sleep budget while
+  retaining protection checks and a focused rollback preference.
+- Corrected owning-window synchronization for tab assignment and scoped
+  asynchronous scan cleanup to its original scan. Targeted regression checks
+  passed; signed release packaging and broader compatibility remain gated.
+
 ## 2026-08-26
 
 - Added a native automatic wallpaper choice backed by the browser's signed
