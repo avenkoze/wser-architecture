@@ -24,3 +24,4 @@ engineering model.
 - [ADR 0011: Keep search-provider selection native and user controlled](0011-native-search-provider-boundary.md)
 - [ADR 0012: Ship Wser Shield as a visible removable extension](0012-visible-removable-shield-extension.md)
 - [ADR 0015: Bind Shield runtime monitoring to scan ownership](0015-shield-runtime-monitor-ownership.md)
+- [ADR 0016: Scope native Shield evidence to documents and request outcomes](0016-native-shield-evidence-lifecycle.md)
