@@ -5,6 +5,8 @@ release notes.
 
 ## 2026-09-08
 
+- Added warning failure recovery and serialized trust persistence; injected
+  failure checks and private/normal browser flows passed (ADR 0022).
 - Isolated private Shield history and bound warning decisions to their owning
   document with one-use tokens. Private and normal browser flows passed (ADR 0022).
 
