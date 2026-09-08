@@ -5,6 +5,9 @@ release notes.
 
 ## 2026-09-08
 
+- Pinned rule verification to approved extension keys. An unrelated signer can
+  no longer authorize its own bundle; existing bootstrap verification and
+  focused browser checks passed (ADR 0021).
 - Shared preferences resource snapshots and stopped hidden-pane sampling;
   policy observers keep sidebar and preferences synchronized. Focused browser
   checks and the frontend build passed (ADR 0020).
