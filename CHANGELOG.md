@@ -1,245 +1,245 @@
-# Architecture Changelog
-
-This changelog records public architecture milestones rather than application
-release notes.
-
-## 2026-09-08
-
-- Preserved unavailable page-content evidence and prevented pending session
-  writes from undoing report cleanup. Controlled browser checks passed (ADRs 0023�0024).
-
-- Corrected resource subscription/process identity and ordered Shield history
-  mutations so pending writes cannot undo clears. Focused tests passed (ADR 0023).
-
-- Added warning failure recovery and serialized trust persistence; injected
-  failure checks and private/normal browser flows passed (ADR 0022).
-- Isolated private Shield history and bound warning decisions to their owning
-  document with one-use tokens. Private and normal browser flows passed (ADR 0022).
-
-- Pinned rule verification to approved extension keys. An unrelated signer can
-  no longer authorize its own bundle; existing bootstrap verification and
-  focused browser checks passed (ADR 0021).
-- Shared preferences resource snapshots and stopped hidden-pane sampling;
-  policy observers keep sidebar and preferences synchronized. Focused browser
-  checks and the frontend build passed (ADR 0020).
-- Moved runtime observations into bounded extension scan memory and excluded
-  page-controlled messages from risk scoring. Storage-forgery, ownership and
-  isolated browser checks passed; hook authenticity is not claimed (ADR 0019).
-
-## 2026-09-07
-
-- Distinguished unavailable cookie measurements from zero counts and made the
-  partial-evidence score visible. Two-container isolation and controlled failure
-  checks passed; partition/private-window coverage remains open (ADR 0018).
-- Bounded Shield policy-body sampling and cancellation, with explicit truncation
-  and redirect rejection. Stream and local HTTP tests passed (ADR 0017).
-- Scoped native Shield evidence to the document and retained independent loaded
-  and blocked request outcomes. Unknown extension blockers receive a generic
-  label; focused browser/unit checks and the development build passed (ADR 0016).
-- Bound Shield runtime monitoring to the authorized scan document and added
-  teardown on completion or disconnect. Isolated browser checks passed for
-  tab isolation, restoration and navigation cancellation; runtime signals
-  remain page-controlled heuristic evidence (ADR 0015).
-- Aligned workspace-owned hidden tabs with the loaded-tab sleep budget while
-  retaining protection checks and a focused rollback preference.
-- Corrected owning-window synchronization for tab assignment and scoped
-  asynchronous scan cleanup to its original scan. Targeted regression checks
-  passed; signed release packaging and broader compatibility remain gated.
-
-## 2026-08-26
-
-- Added a native automatic wallpaper choice backed by the browser's signed
-  wallpaper catalogue. Automatic rotation is limited to an explicit reviewed
-  allow-list, selects once per new-tab instance, and preserves the browser's
-  normal wallpaper, disable, and user-upload paths.
-- Kept competitor artwork and arbitrary wallpaper-search results out of the
-  product. Catalogue unavailability falls back to the normal empty background
-  rather than fetching an unreviewed source.
-
-## 2026-08-24
-
-- Added an authenticated, expiring, rollback-protected Shield bootstrap rule
-  path for reserved test domains. Real-browser coverage now exercises warning
-  decisions, header branches, bounded scan fallback, notification state,
-  disable/enable history restoration, live reports, and Safe Browsing
-  independence; production rules, signed distribution, and removal persistence
-  remain gated.
-- Defined Wser Shield as the single visible, signed, user-removable first-party
-  extension. Its site evidence and bounded local history remain separate from
-  native Safe Browsing/TLS/download protection and from ad/tracker filtering.
-- Retired the separate auditor product name, kept heuristic findings out of
-  default hard blocking, and placed authenticated rules, warning bypass,
-  removal persistence, and real-browser coexistence behind release gates.
-- Kept search-provider selection in Gecko's native normal/private engine
-  contract. New-tab content displays the active provider and delegates changes
-  to native Search settings instead of forcing an engine or replacing signed
-  search configuration.
-- Limited optional result-region hints to parent-validated provider hosts and
-  fixed parameters. The selector does not represent IP location or network
-  anonymity, and unknown providers remain untouched.
-- Advanced the executable privacy profile to version 7 and published
-  fingerprint-contract version 1 at runtime. The source gate now requires every
-  maintained engine fingerprint target to have an explicit protection or
-  compatibility strategy and fails closed when the inventory drifts.
-- Expanded the local privacy audit across identification, geometry, Intl, CSS
-  media, fonts, storage, permissions, device APIs, media capabilities, speech,
-  workers, WebGPU availability, and complex WebGL readback. External anonymity
-  labels and permission-granted hardware behavior remain separate release
-  evidence rather than product guarantees.
-- Advanced the executable privacy contract to version 6. Full Private now
-  applies separately domain-separated, origin/session keyed behavior to offline
-  audio and hardware concurrency alongside Firefox's keyed canvas and WebGL
-  protections. Live audio output and the Socialise compatibility path remain
-  untouched by the new surfaces.
-- Full Private disables remote fingerprinting web-compat overrides; Socialise
-  retains them. A clean-profile Cover Your Tracks run classified canvas, WebGL,
-  audio, and hardware concurrency as randomized and reported a randomized
-  fingerprint.
-- Adopted the public architectural principle used by Helium—session-scoped
-  feature tokens derived per site—through an independent Gecko implementation,
-  without copying GPL-licensed source into the MPL codebase.
-
-## 2026-08-23
-- Advanced the executable privacy contract to version 4. Full Private now uses
-  coherent top-level-site and browsing-session keyed fingerprint randomization;
-  Socialise retains site-keyed graphical protection while restoring timer and
-  peer-connectivity compatibility.
-- Verified stable repeated canvas reads, different cross-site keyed outputs,
-  profile-distinct outputs, relay-only Full Private candidate behavior, and no
-  raw local WebRTC candidates in either profile. External anonymity-set labels
-  remain a separate clean-profile release gate.
-- Made Private and Socialise directly selectable in the native Privacy settings
-  surface and advanced the executable engine contract to version 3.
-- Defined Private as a crowd-oriented fingerprint posture rather than a unique
-  or per-request randomized identity. Kept release-population anonymity claims
-  behind stable-build, repeated external measurement.
-- Hid raw local WebRTC host candidates in both profiles. Private now accepts
-  relay candidates only; Socialise permits public server-reflexive candidates
-  when compatibility requires direct peer connectivity.
-- Verified the profile transition contract, native selector, real ICE candidate
-  classes, and eight read-only compatibility targets per profile without
-  recording literal network addresses.
-- Consolidated resource monitor and tab-sleep measurements into the shared
-  parent-process snapshot cache with per-consumer sampling cadence.
-
-## 2026-08-12
-
-- Added a default-on, user-disableable native address-bar resource indicator
-  for compact memory and effective CPU-frequency visibility.
-- Centralized two-second live sampling in the bounded resource service so
-  multiple windows share one loop and disabling the last visible subscriber
-  stops it. Unsupported frequency counters fall back to sampled CPU activity.
-- Verified toolbar placement, Preferences control, subscription teardown, and
-  accessible naming with focused normal and accessibility-check browser runs.
-- Added a compact resource section directly below the native vertical tabstrip,
-  using the existing bounded resource-service contract. It is not registered as
-  a second sidebar panel.
-- Limited live sampling to the expanded section while the native tab rail is
-  expanded and visible; closing or collapsing the rail stops its timer.
-- Exposed process memory, sampled CPU activity, validated tab-sleep policy,
-  manual background sleeping, and maintained memory recovery without implying
-  an operating-system hard quota.
-- Verified focused native rendering and control delegation with normal and
-  browser accessibility-check runs. Cross-device overhead measurement and
-  manual assistive-technology review remain release gates.
-
-## 2026-08-11
-
-- Added an on-demand parent-process resource service contract that exposes
-  serializable RAM and sampled CPU data without origins, URLs, privileged
-  objects, or a default polling loop.
-- Limited resource controls to validated reversible browser policies and
-  explicitly rejected unsupported hard CPU-limit claims.
-- Defined credential, provider, content-sanitization, account-partitioning,
-  private-window, and endpoint boundaries for the future mail panel.
-- Added Windows forced-colors coverage and passed the focused workspace suite
-  with browser accessibility checks enabled.
-- Extended the 50-tab regression run with deterministic DOM and layout work;
-  recorded 6.98 ms normal and 8.96 ms accessibility-check p95 local baselines.
-- Separated the signed blocking extension from test-enabled builds after
-  Gecko's deny-network guard identified a live third-party filter-list request;
-  release builds continue to bundle the unmodified signed extension and must
-  inventory its runtime endpoints.
-
-## 2026-08-09
-
-- Added the native workspace foundation without duplicating the browser's tab
-  or session lifecycle in page content.
-- Bound local workspace membership to native tab session state, preserved
-  pinned tabs across workspaces, and made inactive-tab hiding source aware.
-- Verified native vertical tabs, workspace switching, new-tab inheritance, and
-  empty-workspace creation through focused browser integration coverage.
-- Added verified local rename and delete behavior, including migration of tabs
-  from a deleted active workspace to a validated fallback.
-- Verified that local workspace membership is serialized and restored through
-  both the native tab-state lifecycle and a same-profile application-process
-  restart with a changed process ID.
-- Mirrored workspace metadata into native global session state, delayed
-  workspace attachment until initial session restore completed, and verified
-  full recovery after an intentional parent-process crash.
-- Verified global workspace selection and visibility across two native browser
-  windows, including later-window attachment and close-time detachment.
-- Kept windows with hidden workspace tabs alive when the last visible tab is
-  closed, using Gecko's native replacement-tab lifecycle.
-- Added a 50-tab switch regression baseline that verifies stable native tab
-  count and workspace visibility without presenting one machine as a general
-  performance claim.
-- Added the native sidebar workspace selector above vertical tabs with
-  accessible single-selection state and Arrow/Home/End keyboard switching;
-  final visual treatment and screen-reader validation remain separate gates.
-- Moved Wser new-tab navigation behind a narrow native browser bridge that
-  resolves searches and web destinations with maintained browser services and
-  rejects non-web schemes.
-- Added a native, local-only Shield reporting boundary that distinguishes
-  third parties that ran from requests blocked by browser protection,
-  extensions, or policy.
-- Required browser-critical surfaces to preserve privilege separation while
-  their visual treatment continues to iterate through the web-first workflow.
-
-## 2026-08-05
-
-- Added a two-profile compatibility smoke matrix covering identity, document,
-  media, WebRTC, payment-development, and challenge-demo surfaces, with clear
-  limits on what constitutes a completed workflow.
-- Upgraded the Private profile contract to full fingerprint resistance,
-  letterboxing, and web-locale standardization while retaining a normal-window
-  compatibility path in Socialise.
-- Added a repeatable external fingerprint report probe and recorded three clean
-  profile runs without turning a volatile population score into a ranking
-  claim.
-- Added a fail-closed, exact-host Private startup egress gate and verified its
-  negative path with a synthetic unknown endpoint.
-- Removed a hidden all-URL search-redirect measurement extension from the
-  packaged browser while preserving search behavior and maintained source.
-- Kept optional account Sync separate from account/client association metrics
-  and upstream Monitor, Relay, and VPN calls to action.
-- Made Private and Socialise an executable, versioned engine contract with a
-  safe Private fallback and live atomic transitions.
-- Required both profiles to preserve the shared safe browsing, HTTPS, cookie
-  isolation, process isolation, and extension-signing baseline.
-- Removed the optional ONNX Runtime from Wser builds while local machine-
-  learning features remain disabled.
-- Separated Remote Settings Push Broadcast from signed periodic polling.
-- Defined Private as starting with the Push transport disconnected while
-  retaining the web Push API for an explicit Socialise opt-in.
-- Established an explicit engine boundary for data egress, remote
-  configuration, and privileged component delivery.
-- Required clean-profile runtime, release-build, and deny-proxy endpoint checks
-  before a release candidate can claim the hardened configuration.
-- Preserved signed security data, sandboxing, process isolation, safe browsing,
-  certificate protections, and extension signing while removing optional
-  reporting and experiment components.
-- Kept automatic application updates out of the temporary release
-  configuration until Wser owns a signed update and rollback chain.
-
-## 2026-08-03
-
-- Established the public Wser architecture journal and publication rules.
-- Accepted Private and Socialise as mutually exclusive protection profiles with
-  a shared security baseline.
-- Adopted a web-first interface workflow with an explicit native integration
-  and verification gate.
-- Required repeatable, equivalent-condition evidence before publishing privacy
-  or performance comparisons.
-- Added the strongest Cover Your Tracks result as a Private release gate while
-  keeping comparative ranking claims dependent on equivalent-condition tests.
+# Architecture Changelog
+
+This changelog records public architecture milestones rather than application
+release notes.
+
+## 2026-09-08
+
+- Preserved unavailable page-content evidence and prevented pending session
+  writes from undoing report cleanup. Controlled browser checks passed (ADRs 0023–0024).
+
+- Corrected resource subscription/process identity and ordered Shield history
+  mutations so pending writes cannot undo clears. Focused tests passed (ADR 0023).
+
+- Added warning failure recovery and serialized trust persistence; injected
+  failure checks and private/normal browser flows passed (ADR 0022).
+- Isolated private Shield history and bound warning decisions to their owning
+  document with one-use tokens. Private and normal browser flows passed (ADR 0022).
+
+- Pinned rule verification to approved extension keys. An unrelated signer can
+  no longer authorize its own bundle; existing bootstrap verification and
+  focused browser checks passed (ADR 0021).
+- Shared preferences resource snapshots and stopped hidden-pane sampling;
+  policy observers keep sidebar and preferences synchronized. Focused browser
+  checks and the frontend build passed (ADR 0020).
+- Moved runtime observations into bounded extension scan memory and excluded
+  page-controlled messages from risk scoring. Storage-forgery, ownership and
+  isolated browser checks passed; hook authenticity is not claimed (ADR 0019).
+
+## 2026-09-07
+
+- Distinguished unavailable cookie measurements from zero counts and made the
+  partial-evidence score visible. Two-container isolation and controlled failure
+  checks passed; partition/private-window coverage remains open (ADR 0018).
+- Bounded Shield policy-body sampling and cancellation, with explicit truncation
+  and redirect rejection. Stream and local HTTP tests passed (ADR 0017).
+- Scoped native Shield evidence to the document and retained independent loaded
+  and blocked request outcomes. Unknown extension blockers receive a generic
+  label; focused browser/unit checks and the development build passed (ADR 0016).
+- Bound Shield runtime monitoring to the authorized scan document and added
+  teardown on completion or disconnect. Isolated browser checks passed for
+  tab isolation, restoration and navigation cancellation; runtime signals
+  remain page-controlled heuristic evidence (ADR 0015).
+- Aligned workspace-owned hidden tabs with the loaded-tab sleep budget while
+  retaining protection checks and a focused rollback preference.
+- Corrected owning-window synchronization for tab assignment and scoped
+  asynchronous scan cleanup to its original scan. Targeted regression checks
+  passed; signed release packaging and broader compatibility remain gated.
+
+## 2026-08-26
+
+- Added a native automatic wallpaper choice backed by the browser's signed
+  wallpaper catalogue. Automatic rotation is limited to an explicit reviewed
+  allow-list, selects once per new-tab instance, and preserves the browser's
+  normal wallpaper, disable, and user-upload paths.
+- Kept competitor artwork and arbitrary wallpaper-search results out of the
+  product. Catalogue unavailability falls back to the normal empty background
+  rather than fetching an unreviewed source.
+
+## 2026-08-24
+
+- Added an authenticated, expiring, rollback-protected Shield bootstrap rule
+  path for reserved test domains. Real-browser coverage now exercises warning
+  decisions, header branches, bounded scan fallback, notification state,
+  disable/enable history restoration, live reports, and Safe Browsing
+  independence; production rules, signed distribution, and removal persistence
+  remain gated.
+- Defined Wser Shield as the single visible, signed, user-removable first-party
+  extension. Its site evidence and bounded local history remain separate from
+  native Safe Browsing/TLS/download protection and from ad/tracker filtering.
+- Retired the separate auditor product name, kept heuristic findings out of
+  default hard blocking, and placed authenticated rules, warning bypass,
+  removal persistence, and real-browser coexistence behind release gates.
+- Kept search-provider selection in Gecko's native normal/private engine
+  contract. New-tab content displays the active provider and delegates changes
+  to native Search settings instead of forcing an engine or replacing signed
+  search configuration.
+- Limited optional result-region hints to parent-validated provider hosts and
+  fixed parameters. The selector does not represent IP location or network
+  anonymity, and unknown providers remain untouched.
+- Advanced the executable privacy profile to version 7 and published
+  fingerprint-contract version 1 at runtime. The source gate now requires every
+  maintained engine fingerprint target to have an explicit protection or
+  compatibility strategy and fails closed when the inventory drifts.
+- Expanded the local privacy audit across identification, geometry, Intl, CSS
+  media, fonts, storage, permissions, device APIs, media capabilities, speech,
+  workers, WebGPU availability, and complex WebGL readback. External anonymity
+  labels and permission-granted hardware behavior remain separate release
+  evidence rather than product guarantees.
+- Advanced the executable privacy contract to version 6. Full Private now
+  applies separately domain-separated, origin/session keyed behavior to offline
+  audio and hardware concurrency alongside Firefox's keyed canvas and WebGL
+  protections. Live audio output and the Socialise compatibility path remain
+  untouched by the new surfaces.
+- Full Private disables remote fingerprinting web-compat overrides; Socialise
+  retains them. A clean-profile Cover Your Tracks run classified canvas, WebGL,
+  audio, and hardware concurrency as randomized and reported a randomized
+  fingerprint.
+- Adopted the public architectural principle used by Heliumâ€”session-scoped
+  feature tokens derived per siteâ€”through an independent Gecko implementation,
+  without copying GPL-licensed source into the MPL codebase.
+
+## 2026-08-23
+- Advanced the executable privacy contract to version 4. Full Private now uses
+  coherent top-level-site and browsing-session keyed fingerprint randomization;
+  Socialise retains site-keyed graphical protection while restoring timer and
+  peer-connectivity compatibility.
+- Verified stable repeated canvas reads, different cross-site keyed outputs,
+  profile-distinct outputs, relay-only Full Private candidate behavior, and no
+  raw local WebRTC candidates in either profile. External anonymity-set labels
+  remain a separate clean-profile release gate.
+- Made Private and Socialise directly selectable in the native Privacy settings
+  surface and advanced the executable engine contract to version 3.
+- Defined Private as a crowd-oriented fingerprint posture rather than a unique
+  or per-request randomized identity. Kept release-population anonymity claims
+  behind stable-build, repeated external measurement.
+- Hid raw local WebRTC host candidates in both profiles. Private now accepts
+  relay candidates only; Socialise permits public server-reflexive candidates
+  when compatibility requires direct peer connectivity.
+- Verified the profile transition contract, native selector, real ICE candidate
+  classes, and eight read-only compatibility targets per profile without
+  recording literal network addresses.
+- Consolidated resource monitor and tab-sleep measurements into the shared
+  parent-process snapshot cache with per-consumer sampling cadence.
+
+## 2026-08-12
+
+- Added a default-on, user-disableable native address-bar resource indicator
+  for compact memory and effective CPU-frequency visibility.
+- Centralized two-second live sampling in the bounded resource service so
+  multiple windows share one loop and disabling the last visible subscriber
+  stops it. Unsupported frequency counters fall back to sampled CPU activity.
+- Verified toolbar placement, Preferences control, subscription teardown, and
+  accessible naming with focused normal and accessibility-check browser runs.
+- Added a compact resource section directly below the native vertical tabstrip,
+  using the existing bounded resource-service contract. It is not registered as
+  a second sidebar panel.
+- Limited live sampling to the expanded section while the native tab rail is
+  expanded and visible; closing or collapsing the rail stops its timer.
+- Exposed process memory, sampled CPU activity, validated tab-sleep policy,
+  manual background sleeping, and maintained memory recovery without implying
+  an operating-system hard quota.
+- Verified focused native rendering and control delegation with normal and
+  browser accessibility-check runs. Cross-device overhead measurement and
+  manual assistive-technology review remain release gates.
+
+## 2026-08-11
+
+- Added an on-demand parent-process resource service contract that exposes
+  serializable RAM and sampled CPU data without origins, URLs, privileged
+  objects, or a default polling loop.
+- Limited resource controls to validated reversible browser policies and
+  explicitly rejected unsupported hard CPU-limit claims.
+- Defined credential, provider, content-sanitization, account-partitioning,
+  private-window, and endpoint boundaries for the future mail panel.
+- Added Windows forced-colors coverage and passed the focused workspace suite
+  with browser accessibility checks enabled.
+- Extended the 50-tab regression run with deterministic DOM and layout work;
+  recorded 6.98 ms normal and 8.96 ms accessibility-check p95 local baselines.
+- Separated the signed blocking extension from test-enabled builds after
+  Gecko's deny-network guard identified a live third-party filter-list request;
+  release builds continue to bundle the unmodified signed extension and must
+  inventory its runtime endpoints.
+
+## 2026-08-09
+
+- Added the native workspace foundation without duplicating the browser's tab
+  or session lifecycle in page content.
+- Bound local workspace membership to native tab session state, preserved
+  pinned tabs across workspaces, and made inactive-tab hiding source aware.
+- Verified native vertical tabs, workspace switching, new-tab inheritance, and
+  empty-workspace creation through focused browser integration coverage.
+- Added verified local rename and delete behavior, including migration of tabs
+  from a deleted active workspace to a validated fallback.
+- Verified that local workspace membership is serialized and restored through
+  both the native tab-state lifecycle and a same-profile application-process
+  restart with a changed process ID.
+- Mirrored workspace metadata into native global session state, delayed
+  workspace attachment until initial session restore completed, and verified
+  full recovery after an intentional parent-process crash.
+- Verified global workspace selection and visibility across two native browser
+  windows, including later-window attachment and close-time detachment.
+- Kept windows with hidden workspace tabs alive when the last visible tab is
+  closed, using Gecko's native replacement-tab lifecycle.
+- Added a 50-tab switch regression baseline that verifies stable native tab
+  count and workspace visibility without presenting one machine as a general
+  performance claim.
+- Added the native sidebar workspace selector above vertical tabs with
+  accessible single-selection state and Arrow/Home/End keyboard switching;
+  final visual treatment and screen-reader validation remain separate gates.
+- Moved Wser new-tab navigation behind a narrow native browser bridge that
+  resolves searches and web destinations with maintained browser services and
+  rejects non-web schemes.
+- Added a native, local-only Shield reporting boundary that distinguishes
+  third parties that ran from requests blocked by browser protection,
+  extensions, or policy.
+- Required browser-critical surfaces to preserve privilege separation while
+  their visual treatment continues to iterate through the web-first workflow.
+
+## 2026-08-05
+
+- Added a two-profile compatibility smoke matrix covering identity, document,
+  media, WebRTC, payment-development, and challenge-demo surfaces, with clear
+  limits on what constitutes a completed workflow.
+- Upgraded the Private profile contract to full fingerprint resistance,
+  letterboxing, and web-locale standardization while retaining a normal-window
+  compatibility path in Socialise.
+- Added a repeatable external fingerprint report probe and recorded three clean
+  profile runs without turning a volatile population score into a ranking
+  claim.
+- Added a fail-closed, exact-host Private startup egress gate and verified its
+  negative path with a synthetic unknown endpoint.
+- Removed a hidden all-URL search-redirect measurement extension from the
+  packaged browser while preserving search behavior and maintained source.
+- Kept optional account Sync separate from account/client association metrics
+  and upstream Monitor, Relay, and VPN calls to action.
+- Made Private and Socialise an executable, versioned engine contract with a
+  safe Private fallback and live atomic transitions.
+- Required both profiles to preserve the shared safe browsing, HTTPS, cookie
+  isolation, process isolation, and extension-signing baseline.
+- Removed the optional ONNX Runtime from Wser builds while local machine-
+  learning features remain disabled.
+- Separated Remote Settings Push Broadcast from signed periodic polling.
+- Defined Private as starting with the Push transport disconnected while
+  retaining the web Push API for an explicit Socialise opt-in.
+- Established an explicit engine boundary for data egress, remote
+  configuration, and privileged component delivery.
+- Required clean-profile runtime, release-build, and deny-proxy endpoint checks
+  before a release candidate can claim the hardened configuration.
+- Preserved signed security data, sandboxing, process isolation, safe browsing,
+  certificate protections, and extension signing while removing optional
+  reporting and experiment components.
+- Kept automatic application updates out of the temporary release
+  configuration until Wser owns a signed update and rollback chain.
+
+## 2026-08-03
+
+- Established the public Wser architecture journal and publication rules.
+- Accepted Private and Socialise as mutually exclusive protection profiles with
+  a shared security baseline.
+- Adopted a web-first interface workflow with an explicit native integration
+  and verification gate.
+- Required repeatable, equivalent-condition evidence before publishing privacy
+  or performance comparisons.
+- Added the strongest Cover Your Tracks result as a Private release gate while
+  keeping comparative ranking claims dependent on equivalent-condition tests.

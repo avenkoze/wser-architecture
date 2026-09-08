@@ -36,3 +36,5 @@ engineering model.
 - [ADR 0023: Preserve resource ownership and history operation order](0023-resource-sample-ownership-and-history-ordering.md)
 
 - [ADR 0024: Preserve unavailable page-content evidence](0024-unavailable-page-content-evidence.md)
+
+- [ADR 0025: Close the verified audit implementation scope](0025-audit-implementation-closure.md)
