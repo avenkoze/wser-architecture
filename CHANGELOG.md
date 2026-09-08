@@ -5,6 +5,9 @@ release notes.
 
 ## 2026-09-08
 
+- Isolated private Shield history and bound warning decisions to their owning
+  document with one-use tokens. Private and normal browser flows passed (ADR 0022).
+
 - Pinned rule verification to approved extension keys. An unrelated signer can
   no longer authorize its own bundle; existing bootstrap verification and
   focused browser checks passed (ADR 0021).

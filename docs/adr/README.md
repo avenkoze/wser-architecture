@@ -28,3 +28,7 @@ engineering model.
 - [ADR 0017: Bound Shield policy response sampling](0017-bound-policy-response-sampling.md)
 - [ADR 0018: Preserve unavailable cookie evidence](0018-unavailable-cookie-evidence.md)
 - [ADR 0019: Keep page runtime observations unverified and unscored](0019-unverified-runtime-observations.md)
+
+- [ADR 0020: Share visible resource sampling and policy observations](0020-visible-resource-sampling.md)
+- [ADR 0021: Pin rule verification trust in the extension](0021-pinned-rule-trust.md)
+- [ADR 0022: Isolate private Shield history and warning decisions](0022-private-shield-history-and-warning-ownership.md)
