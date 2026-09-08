@@ -5,6 +5,9 @@ release notes.
 
 ## 2026-09-08
 
+- Preserved unavailable page-content evidence and prevented pending session
+  writes from undoing report cleanup. Controlled browser checks passed (ADRs 0023–0024).
+
 - Corrected resource subscription/process identity and ordered Shield history
   mutations so pending writes cannot undo clears. Focused tests passed (ADR 0023).
 

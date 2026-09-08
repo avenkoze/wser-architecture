@@ -34,3 +34,5 @@ engineering model.
 - [ADR 0022: Isolate private Shield history and warning decisions](0022-private-shield-history-and-warning-ownership.md)
 
 - [ADR 0023: Preserve resource ownership and history operation order](0023-resource-sample-ownership-and-history-ordering.md)
+
+- [ADR 0024: Preserve unavailable page-content evidence](0024-unavailable-page-content-evidence.md)
