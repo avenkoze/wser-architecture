@@ -5,6 +5,9 @@ release notes.
 
 ## 2026-09-08
 
+- Corrected resource subscription/process identity and ordered Shield history
+  mutations so pending writes cannot undo clears. Focused tests passed (ADR 0023).
+
 - Added warning failure recovery and serialized trust persistence; injected
   failure checks and private/normal browser flows passed (ADR 0022).
 - Isolated private Shield history and bound warning decisions to their owning

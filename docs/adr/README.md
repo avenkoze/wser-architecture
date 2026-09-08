@@ -32,3 +32,5 @@ engineering model.
 - [ADR 0020: Share visible resource sampling and policy observations](0020-visible-resource-sampling.md)
 - [ADR 0021: Pin rule verification trust in the extension](0021-pinned-rule-trust.md)
 - [ADR 0022: Isolate private Shield history and warning decisions](0022-private-shield-history-and-warning-ownership.md)
+
+- [ADR 0023: Preserve resource ownership and history operation order](0023-resource-sample-ownership-and-history-ordering.md)
